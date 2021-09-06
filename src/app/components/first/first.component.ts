@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstComponent implements OnInit {
 
+  isHidden = false;
+
+  message = "";
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggle(): void
+  {
+    this.isHidden = !this.isHidden;
+  }
+
+  changeMessage(newMessage: string): void
+  {
+    this.message = newMessage;
+  }
 }
