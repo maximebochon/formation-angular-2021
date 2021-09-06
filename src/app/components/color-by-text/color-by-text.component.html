@@ -1,0 +1,5 @@
+<h1>Color</h1>
+<div [style.backgroundColor]="bgColor">{{bgColor}}</div>
+Type color name here : <input #colorInput type="text" class="form-control"
+(change)="changeColor(colorInput.value)">
+<button (click)="changeColor(DEFAULT_COLOR)">Reset color</button>
