@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { FirstComponent } from './components/first/first.component';
 import { ColorByTextComponent } from './components/color-by-text/color-by-text.component';
 import { BidirComponent } from './components/bidir/bidir.component';
+import { BidirCardComponent } from './components/bidir-card/bidir-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
     ColorByTextComponent,
-    BidirComponent
+    BidirComponent,
+    BidirCardComponent
   ],
   imports: [
     BrowserModule,
