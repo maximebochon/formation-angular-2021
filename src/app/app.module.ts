@@ -18,6 +18,7 @@ import { NgClassComponent } from './directives/ng-class/ng-class.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowTypingDirective } from './directives/rainbow-typing.directive';
 import { DefaultImagePipe } from './pipes/default-image.pipe';
+import { Logger } from './services/logger.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,9 @@ import { DefaultImagePipe } from './pipes/default-image.pipe';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    Logger
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
