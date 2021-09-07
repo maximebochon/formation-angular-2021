@@ -8,6 +8,10 @@ import { FirstComponent } from './components/first/first.component';
 import { ColorByTextComponent } from './components/color-by-text/color-by-text.component';
 import { BidirComponent } from './components/bidir/bidir.component';
 import { BidirCardComponent } from './components/bidir-card/bidir-card.component';
+import { ItemComponent } from './cv/item/item.component';
+import { CardDetailComponent } from './cv/card-detail/card-detail.component';
+import { ListComponent } from './cv/list/list.component';
+import { CvComponent } from './cv/cv/cv.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { BidirCardComponent } from './components/bidir-card/bidir-card.component
     FirstComponent,
     ColorByTextComponent,
     BidirComponent,
-    BidirCardComponent
+    BidirCardComponent,
+    ItemComponent,
+    CardDetailComponent,
+    ListComponent,
+    CvComponent
   ],
   imports: [
     BrowserModule,
