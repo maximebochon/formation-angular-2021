@@ -15,6 +15,7 @@ import { CvComponent } from './cv/cv/cv.component';
 import { NgStyleComponent } from './directives/ng-style/ng-style.component';
 import { TextFormattingComponent } from './directives/text-formatting/text-formatting.component';
 import { NgClassComponent } from './directives/ng-class/ng-class.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NgClassComponent } from './directives/ng-class/ng-class.component';
     CvComponent,
     NgStyleComponent,
     TextFormattingComponent,
-    NgClassComponent
+    NgClassComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
