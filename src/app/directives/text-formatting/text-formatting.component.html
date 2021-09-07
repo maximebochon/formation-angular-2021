@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col"><input type="color" [(ngModel)]="color" class="form-control"></div>
+        <div class="col"><input type="number" [(ngModel)]="sizeInPt" class="form-control"></div>
+        <div class="col"><select [(ngModel)]="fontFamily" class="form-control">
+            <option>serif</option><option>sans-serif</option><option>monospace</option>
+            <option>Garamond</option><option>Arial</option>
+        </select></div>
+    </div>
+    <div>
+        <textarea class="form-control" [ngStyle]="{
+            'color': color, 'fontSize': (sizeInPt + 'pt'), 'fontFamily': fontFamily
+        }">Zone de texte.</textarea>
+    </div>
+</div>
