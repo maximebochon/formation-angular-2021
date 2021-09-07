@@ -1,0 +1,12 @@
+div {
+    width: 100px;
+    height: 100px;
+}
+
+.on {
+    background-color: yellow;
+}
+
+.off {
+    background-color: black;
+}

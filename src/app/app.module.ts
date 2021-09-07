@@ -14,6 +14,7 @@ import { ListComponent } from './cv/list/list.component';
 import { CvComponent } from './cv/cv/cv.component';
 import { NgStyleComponent } from './directives/ng-style/ng-style.component';
 import { TextFormattingComponent } from './directives/text-formatting/text-formatting.component';
+import { NgClassComponent } from './directives/ng-class/ng-class.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TextFormattingComponent } from './directives/text-formatting/text-forma
     ListComponent,
     CvComponent,
     NgStyleComponent,
-    TextFormattingComponent
+    TextFormattingComponent,
+    NgClassComponent
   ],
   imports: [
     BrowserModule,
