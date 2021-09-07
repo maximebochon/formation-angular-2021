@@ -51,6 +51,10 @@
                 </div>
             </div>
             <div class="footer">
+                <button class="btn"
+                [ngClass]="{'btn-primary': !isHired(), 'btn-success': isHired()}"
+                (click)="hire()"
+                [disabled]="isHired()">{{ isHired() ? 'Hired!' : 'Hire' }}</button>
             </div>
         </div> <!-- end back panel -->
     </div> <!-- end card -->

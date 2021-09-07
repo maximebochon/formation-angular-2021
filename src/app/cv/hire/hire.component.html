@@ -1,0 +1,7 @@
+<div *ngIf="hiredList.length > 0" class="mt-2">
+    <h1>Hired list:</h1>
+    <ul><li *ngFor="let hiredCv of hiredList">{{hiredCv.lastname | uppercase}}
+        <i class="fa fa-trash fa-x4 ml-2"
+        (click)="remove(hiredCv)"></i>
+    </li></ul>
+</div>

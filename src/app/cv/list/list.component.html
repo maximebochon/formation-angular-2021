@@ -1,11 +1,3 @@
-<!--
-<ol class="list-group">
-    <li class="list-group-item"><cv-item (sendSelectedCv)="forwardCv($event)" [cv]="cvList[0]"></cv-item></li>
-    <li class="list-group-item"><cv-item (sendSelectedCv)="forwardCv($event)" [cv]="cvList[1]"></cv-item></li>
-    <li class="list-group-item"><cv-item (sendSelectedCv)="forwardCv($event)" [cv]="cvList[2]"></cv-item></li>
-</ol>
--->
-
 <ol class="list-group">
     <li *ngFor="let cv of cvList; let isOdd = odd;" class="list-group-item" [ngClass]="{oddColor: isOdd}">
         <cv-item (sendSelectedCv)="forwardCv($event)" [cv]="cv"></cv-item>

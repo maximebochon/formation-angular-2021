@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { CONSTANTS } from '../constants';
+import { CONSTANTS } from '../../constants';
 
 @Pipe({
   name: 'defaultImage'
