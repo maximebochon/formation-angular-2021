@@ -16,6 +16,7 @@ import { NgStyleComponent } from './directives/ng-style/ng-style.component';
 import { TextFormattingComponent } from './directives/text-formatting/text-formatting.component';
 import { NgClassComponent } from './directives/ng-class/ng-class.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { RainbowTypingDirective } from './directives/rainbow-typing.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     NgStyleComponent,
     TextFormattingComponent,
     NgClassComponent,
-    HighlightDirective
+    HighlightDirective,
+    RainbowTypingDirective
   ],
   imports: [
     BrowserModule,
