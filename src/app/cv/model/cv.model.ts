@@ -4,6 +4,6 @@ export class Cv {
         public firstname = '',
         public lastname = '',
         public birth = 0,
-        public picture = ''
+        public picture: string|null = null
     ) {}
 }

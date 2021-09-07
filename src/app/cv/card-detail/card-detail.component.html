@@ -5,11 +5,11 @@
                 <img src="https://demos.creative-tim.com/rotating-css-card/images/rotating_card_thumb2.png">
             </div>
             <div class="user">
-                <img class="img-circle" src="{{cv?.picture}}">
+                <img class="img-circle" src="{{cv?.picture | defaultImage}}">
             </div>
             <div class="content">
                 <div class="main">
-                    <h3 class="name">{{cv?.firstname}} {{cv?.lastname}}</h3>
+                    <h3 class="name">{{cv?.firstname | titlecase}} {{cv?.lastname | uppercase}}</h3>
                     <p class="profession">{{cv?.birth}}</p>
                     <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
                 </div>

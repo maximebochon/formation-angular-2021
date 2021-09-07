@@ -1,9 +1,9 @@
 <div (click)="selectCv()">
 <img
-    src="{{cv?.picture}}"
+    src="{{cv?.picture | defaultImage}}"
     class="rounded-circle"
     width="50px"
     height="50px">
-<span><strong>{{cv?.lastname}} {{cv?.firstname}}</strong>
+<span><strong>{{cv?.lastname | uppercase}} {{cv?.firstname | titlecase}}</strong>
 {{cv?.birth}}</span>
 </div>

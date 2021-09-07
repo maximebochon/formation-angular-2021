@@ -17,6 +17,7 @@ import { TextFormattingComponent } from './directives/text-formatting/text-forma
 import { NgClassComponent } from './directives/ng-class/ng-class.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowTypingDirective } from './directives/rainbow-typing.directive';
+import { DefaultImagePipe } from './pipes/default-image.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RainbowTypingDirective } from './directives/rainbow-typing.directive';
     TextFormattingComponent,
     NgClassComponent,
     HighlightDirective,
-    RainbowTypingDirective
+    RainbowTypingDirective,
+    DefaultImagePipe
   ],
   imports: [
     BrowserModule,
