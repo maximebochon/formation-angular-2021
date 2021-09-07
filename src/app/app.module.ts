@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +20,8 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowTypingDirective } from './directives/rainbow-typing.directive';
 import { DefaultImagePipe } from './pipes/default-image.pipe';
 import { Logger } from './services/logger.service';
+import { ToastrModule } from 'ngx-toastr';
+import { TodoListAppComponent } from './todoList/components/app/app.component';
 
 @NgModule({
   declarations: [
@@ -36,12 +39,15 @@ import { Logger } from './services/logger.service';
     NgClassComponent,
     HighlightDirective,
     RainbowTypingDirective,
-    DefaultImagePipe
+    DefaultImagePipe,
+    TodoListAppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [
     Logger
