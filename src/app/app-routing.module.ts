@@ -13,8 +13,10 @@ const routes: Routes = [
   { path: 'color/:color', component: ColorByTextComponent },
   { path: 'text', component: TextFormattingComponent },
   { path: 'todo', component: TodoListAppComponent },
-  { path: 'cv', component: CvComponent },
-  { path: 'cv/:id', component: PageDetailComponent },
+  { path: 'cv', children: [
+    { path: '', component: CvComponent },
+    { path: ':id', component: PageDetailComponent },
+  ]}
 ];
 
 @NgModule({
