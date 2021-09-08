@@ -38,8 +38,12 @@ export class PageDetailComponent implements OnInit {
 
   removeCv()
   {
-    this.cvService.remove(this.cv);
-    this.hireService.remove(this.cv);
+    if (this.cvService.remove(this.cv)) {
+      this.toaster.success(`CV ${this.cv.id} was deleted.`);
+    }
+    if (this.hireService.remove(this.cv)) {
+      this.toaster.info(`CV ${this.cv.id} was removed from hired list.`);
+    };
     this.router.navigate(['/cv']);
   }
 }

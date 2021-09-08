@@ -34,8 +34,10 @@ export class HireService {
     return (this.cvList.indexOf(cv) >= 0);
   }
 
-  remove(cv: Cv): void {
+  remove(cv: Cv): boolean {
     const index = this.cvList.indexOf(cv);
+    if (index < 0) return false;
     this.cvList.splice(index, 1);
+    return true;
   }
 }
