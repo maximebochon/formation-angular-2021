@@ -7,7 +7,7 @@ import { Cv } from '../model/cv.model';
 })
 export class CvService {
 
-  cvList: Cv[] = [];
+  private cvList: Cv[] = [];
 
   constructor(
     private logger: Logger

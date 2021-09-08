@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 import { Logger } from 'src/app/services/logger.service';
 import { Cv } from '../model/cv.model';
 
@@ -11,8 +10,7 @@ export class HireService {
   cvList: Cv[] = [];
 
   constructor(
-    private logger: Logger,
-    private toaster: ToastrService
+    private logger: Logger
   ) {}
 
   log(): void {
@@ -23,11 +21,12 @@ export class HireService {
     return this.cvList;
   }
 
-  hire(cv: Cv): void {
+  hire(cv: Cv): boolean {
     if (this.cvList.indexOf(cv) < 0) {
       this.cvList.push(cv);
+      return true;
     } else {
-      this.toaster.warning(`CV for ${cv.lastname.toUpperCase()} already hired.`);
+      return false;
     }
   }
 
