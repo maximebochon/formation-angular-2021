@@ -34,10 +34,12 @@
             <div class="d-flex justify-content-center">
               <button
                 (click)="removeCv()"
-                class="btn btn-danger"
-              >
-                Remove
-              </button>
+                class="btn btn-danger">
+                Remove</button>
+              <button
+                [routerLink]="['/cv']"
+                class="btn btn-light">
+                Back</button>
             </div>
           </div>
         </div>
