@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Cv } from '../model/cv.model';
 import { HireService } from '../services/hire.service';
@@ -14,19 +15,24 @@ export class CardDetailComponent implements OnInit {
 
   constructor(
     private hireService: HireService,
-    private toaster: ToastrService
+    private toaster: ToastrService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
   }
 
-  hire() {
+  hire(): void {
     if(!this.hireService.hire(this.cv)) {
       this.toaster.warning(`CV for ${this.cv.lastname.toUpperCase()} already hired.`);
     }
   }
 
-  isHired() {
+  isHired(): boolean {
     return this.hireService.isHired(this.cv);
+  }
+
+  showDetails(): void {
+    this.router.navigate(['cv', this.cv.id]);
   }
 }

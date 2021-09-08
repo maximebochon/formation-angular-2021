@@ -25,6 +25,7 @@ import { TodoListAppComponent } from './todoList/components/app/app.component';
 import { HireComponent } from './cv/hire/hire.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DropdownRoutingBarComponent } from './components/dropdown-routing-bar/dropdown-routing-bar.component';
+import { PageDetailComponent } from './cv/page-detail/page-detail.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { DropdownRoutingBarComponent } from './components/dropdown-routing-bar/d
     TodoListAppComponent,
     HireComponent,
     HeaderComponent,
-    DropdownRoutingBarComponent
+    DropdownRoutingBarComponent,
+    PageDetailComponent
   ],
   imports: [
     BrowserModule,
