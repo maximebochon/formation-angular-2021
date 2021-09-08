@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ColorByTextComponent } from './components/color-by-text/color-by-text.component';
 import { FirstComponent } from './components/first/first.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CvComponent } from './cv/cv/cv.component';
 import { PageDetailComponent } from './cv/page-detail/page-detail.component';
 import { TextFormattingComponent } from './directives/text-formatting/text-formatting.component';
@@ -16,7 +17,9 @@ const routes: Routes = [
   { path: 'cv', children: [
     { path: '', component: CvComponent },
     { path: ':id', component: PageDetailComponent },
-  ]}
+  ]},
+  { path: 'CV', redirectTo: 'cv', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

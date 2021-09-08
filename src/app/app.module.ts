@@ -26,6 +26,7 @@ import { HireComponent } from './cv/hire/hire.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DropdownRoutingBarComponent } from './components/dropdown-routing-bar/dropdown-routing-bar.component';
 import { PageDetailComponent } from './cv/page-detail/page-detail.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { PageDetailComponent } from './cv/page-detail/page-detail.component';
     HireComponent,
     HeaderComponent,
     DropdownRoutingBarComponent,
-    PageDetailComponent
+    PageDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
