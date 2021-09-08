@@ -23,6 +23,8 @@ import { Logger } from './services/logger.service';
 import { ToastrModule } from 'ngx-toastr';
 import { TodoListAppComponent } from './todoList/components/app/app.component';
 import { HireComponent } from './cv/hire/hire.component';
+import { HeaderComponent } from './components/header/header.component';
+import { DropdownRoutingBarComponent } from './components/dropdown-routing-bar/dropdown-routing-bar.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { HireComponent } from './cv/hire/hire.component';
     RainbowTypingDirective,
     DefaultImagePipe,
     TodoListAppComponent,
-    HireComponent
+    HireComponent,
+    HeaderComponent,
+    DropdownRoutingBarComponent
   ],
   imports: [
     BrowserModule,
