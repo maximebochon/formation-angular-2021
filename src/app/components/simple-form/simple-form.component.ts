@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './simple-form.component.html',
   styleUrls: ['./simple-form.component.css']
 })
-export class FormComponent implements OnInit {
+export class SimpleFormComponent implements OnInit {
 
   constructor() { }
 
