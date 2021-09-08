@@ -29,6 +29,7 @@ import { PageDetailComponent } from './cv/page-detail/page-detail.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SimpleFormComponent } from './components/simple-form/simple-form.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { CycleImageComponent } from './components/cycle-image/cycle-image.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { LoginFormComponent } from './components/login-form/login-form.component
     PageDetailComponent,
     PageNotFoundComponent,
     SimpleFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    CycleImageComponent
   ],
   imports: [
     BrowserModule,

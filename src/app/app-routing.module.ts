@@ -9,6 +9,7 @@ import { PageDetailComponent } from './cv/page-detail/page-detail.component';
 import { TextFormattingComponent } from './directives/text-formatting/text-formatting.component';
 import { TodoListAppComponent } from './todoList/components/app/app.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { CycleImageComponent } from './components/cycle-image/cycle-image.component';
 
 const routes: Routes = [
   { path: '', component: FirstComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
     { path: ':id', component: PageDetailComponent },
   ]},
   { path: 'CV', redirectTo: 'cv', pathMatch: 'full' },
+  { path: 'cycle-image', component: CycleImageComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
