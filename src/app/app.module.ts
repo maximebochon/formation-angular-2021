@@ -27,6 +27,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { DropdownRoutingBarComponent } from './components/dropdown-routing-bar/dropdown-routing-bar.component';
 import { PageDetailComponent } from './cv/page-detail/page-detail.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { FormComponent } from './components/simple-form/simple-form.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     HeaderComponent,
     DropdownRoutingBarComponent,
     PageDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

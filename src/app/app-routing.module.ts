@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ColorByTextComponent } from './components/color-by-text/color-by-text.component';
 import { FirstComponent } from './components/first/first.component';
+import { FormComponent } from './components/simple-form/simple-form.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CvComponent } from './cv/cv/cv.component';
 import { PageDetailComponent } from './cv/page-detail/page-detail.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'color/:color', component: ColorByTextComponent },
   { path: 'text', component: TextFormattingComponent },
   { path: 'todo', component: TodoListAppComponent },
+  { path: 'form', component: FormComponent },
   { path: 'cv', children: [
     { path: '', component: CvComponent },
     { path: ':id', component: PageDetailComponent },
