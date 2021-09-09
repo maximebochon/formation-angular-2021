@@ -20,30 +20,28 @@ export class PageDetailComponent implements OnInit {
     private toaster: ToastrService,
     private cvService: CvService,
     private hireService: HireService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
       (params) => {
-        const found = this.cvService.findCvById(+params.id);
-        if (found) {
-          this.cv = found;
-        }
-        else {
-          this.router.navigate(['/cv']);
-        }
+        this.cvService.findCvById(+params.id).subscribe(
+          (cv) => this.cv = cv,
+          (error) => {
+            this.router.navigate(['/cv']);
+          }
+        );
       }
     );
   }
 
-  removeCv()
-  {
-    if (this.cvService.remove(this.cv)) {
-      this.toaster.success(`CV ${this.cv.id} was deleted.`);
-    }
-    if (this.hireService.remove(this.cv)) {
-      this.toaster.info(`CV ${this.cv.id} was removed from hired list.`);
-    };
-    this.router.navigate(['/cv']);
+  removeCv() {
+    // if (this.cvService.remove(this.cv)) {
+    //   this.toaster.success(`CV ${this.cv.id} was deleted.`);
+    // }
+    // if (this.hireService.remove(this.cv)) {
+    //   this.toaster.info(`CV ${this.cv.id} was removed from hired list.`);
+    // };
+    // this.router.navigate(['/cv']);
   }
 }
