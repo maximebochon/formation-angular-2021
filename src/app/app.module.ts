@@ -32,6 +32,7 @@ import { SimpleFormComponent } from './components/simple-form/simple-form.compon
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { CycleImageComponent } from './components/cycle-image/cycle-image.component';
 import { HttpTestComponent } from './components/http-test/http-test.component';
+import { AddComponent } from './cv/add/add.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { HttpTestComponent } from './components/http-test/http-test.component';
     SimpleFormComponent,
     LoginFormComponent,
     CycleImageComponent,
-    HttpTestComponent
+    HttpTestComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,

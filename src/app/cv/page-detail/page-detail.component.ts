@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -36,12 +37,14 @@ export class PageDetailComponent implements OnInit {
   }
 
   removeCv() {
-    // if (this.cvService.remove(this.cv)) {
-    //   this.toaster.success(`CV ${this.cv.id} was deleted.`);
-    // }
-    // if (this.hireService.remove(this.cv)) {
-    //   this.toaster.info(`CV ${this.cv.id} was removed from hired list.`);
-    // };
-    // this.router.navigate(['/cv']);
+    this.cvService.deleteCv(this.cv.id).subscribe(
+      (ok) => {
+        this.toaster.success('Le cv de a été supprimé avec succès');
+        this.router.navigate(['/cv']);
+      },
+      (error: HttpErrorResponse) => {
+        this.toaster.success(error.message);
+      }
+    )
   }
 }

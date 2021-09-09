@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Observable, Subject } from 'rxjs';
-import { CONSTANTS } from 'src/app/constants';
+import { API, CONSTANTS } from 'src/app/constants';
 import { Logger } from 'src/app/services/logger.service';
 import { Cv } from '../model/cv.model';
 import { RemoteCv } from '../model/remote-cv.model';
@@ -42,21 +42,22 @@ export class CvService {
     return index * 100;
   }
 
+  private remoteCvToCv = (remote: RemoteCv) => {
+    let cv = new Cv();
+    cv.id = remote.id;
+    cv.firstname = remote.firstname;
+    cv.lastname = remote.name;
+    cv.birth = 2021 - remote.age; // TODO: get year from Date
+    if(remote.path?.trim().length) {
+      cv.picture = 'https://raw.githubusercontent.com/aymensellaouti/thalesGroupe/master/src/assets/images/' + remote.path;
+    }
+    return cv;
+  };
+
   getObservable(): Observable<Cv[]> {
-    return this.http.get<RemoteCv[]>(CONSTANTS.remoteDataApi)
+    return this.http.get<RemoteCv[]>(API.cv)
       .pipe(
-        map((remoteCvList) => remoteCvList.map(
-          (remote: RemoteCv) => {
-            let cv = new Cv();
-            cv.id = remote.id;
-            cv.firstname = remote.firstname;
-            cv.lastname = remote.name;
-            cv.birth = 2021 - remote.age; // TODO: get year from Date
-            if(remote.path?.trim().length) {
-              cv.picture = 'https://raw.githubusercontent.com/aymensellaouti/thalesGroupe/master/src/assets/images/' + remote.path;
-            }
-            return cv;
-          }))
+        map((remoteCvList) => remoteCvList.map(this.remoteCvToCv))
       );
   }
 
@@ -69,7 +70,21 @@ export class CvService {
   }
 
   findCvById(id: number): Observable<Cv> {
-    return this.http.get<Cv>(CONSTANTS.remoteDataApi + id);
+    return this.http.get<RemoteCv>(API.cv + id).pipe(
+      map(this.remoteCvToCv)
+    );
+  }
+
+  deleteCv(id: number): Observable<any> {
+    const headers = new HttpHeaders().set(
+      'Authorization', localStorage.get('auth-token-id'));
+    return this.http.delete<Cv>(API.cv + id, { headers });
+  }
+
+  addCv(remoteCv: RemoteCv): Observable<RemoteCv> {
+    const headers = new HttpHeaders().set(
+      'Authorization', localStorage.get('auth-token-id'));
+    return this.http.post<RemoteCv>(API.cv, remoteCv, { headers });
   }
 
   removeMockCv(cv: Cv): boolean {

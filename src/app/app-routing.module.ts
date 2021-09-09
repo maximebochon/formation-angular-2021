@@ -11,6 +11,7 @@ import { TodoListAppComponent } from './todoList/components/app/app.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { CycleImageComponent } from './components/cycle-image/cycle-image.component';
 import { HttpTestComponent } from './components/http-test/http-test.component';
+import { AddComponent } from './cv/add/add.component';
 
 const routes: Routes = [
   { path: '', component: FirstComponent },
@@ -22,7 +23,9 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'cv', children: [
     { path: '', component: CvComponent },
+    { path: 'add', component: AddComponent },
     { path: ':id', component: PageDetailComponent },
+
   ]},
   { path: 'CV', redirectTo: 'cv', pathMatch: 'full' },
   { path: 'cycle-image', component: CycleImageComponent },
