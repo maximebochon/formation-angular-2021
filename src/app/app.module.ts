@@ -33,6 +33,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { CycleImageComponent } from './components/cycle-image/cycle-image.component';
 import { HttpTestComponent } from './components/http-test/http-test.component';
 import { AddComponent } from './cv/add/add.component';
+import { AuthInterceptorProvider } from './auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { AddComponent } from './cv/add/add.component';
     ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [
-    Logger
+    Logger,
+    AuthInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })

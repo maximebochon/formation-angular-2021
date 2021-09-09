@@ -76,15 +76,11 @@ export class CvService {
   }
 
   deleteCv(id: number): Observable<any> {
-    const headers = new HttpHeaders().set(
-      'Authorization', localStorage.get('auth-token-id'));
-    return this.http.delete<Cv>(API.cv + id, { headers });
+    return this.http.delete<Cv>(API.cv + id);
   }
 
   addCv(remoteCv: RemoteCv): Observable<RemoteCv> {
-    const headers = new HttpHeaders().set(
-      'Authorization', localStorage.get('auth-token-id'));
-    return this.http.post<RemoteCv>(API.cv, remoteCv, { headers });
+    return this.http.post<RemoteCv>(API.cv, remoteCv);
   }
 
   removeMockCv(cv: Cv): boolean {
