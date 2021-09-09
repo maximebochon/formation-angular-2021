@@ -10,6 +10,7 @@ import { TextFormattingComponent } from './directives/text-formatting/text-forma
 import { TodoListAppComponent } from './todoList/components/app/app.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { CycleImageComponent } from './components/cycle-image/cycle-image.component';
+import { HttpTestComponent } from './components/http-test/http-test.component';
 
 const routes: Routes = [
   { path: '', component: FirstComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   ]},
   { path: 'CV', redirectTo: 'cv', pathMatch: 'full' },
   { path: 'cycle-image', component: CycleImageComponent },
+  { path: 'http-test', component: HttpTestComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -30,6 +31,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { SimpleFormComponent } from './components/simple-form/simple-form.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { CycleImageComponent } from './components/cycle-image/cycle-image.component';
+import { HttpTestComponent } from './components/http-test/http-test.component';
 
 @NgModule({
   declarations: [
@@ -56,11 +58,13 @@ import { CycleImageComponent } from './components/cycle-image/cycle-image.compon
     PageNotFoundComponent,
     SimpleFormComponent,
     LoginFormComponent,
-    CycleImageComponent
+    CycleImageComponent,
+    HttpTestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot() // ToastrModule added
