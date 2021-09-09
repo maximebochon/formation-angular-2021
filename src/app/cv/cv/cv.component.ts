@@ -16,14 +16,11 @@ export class CvComponent implements OnInit {
   constructor(
     private logger: Logger,
     private cvService: CvService,
-    private hireService: HireService
   ) { }
 
   ngOnInit(): void {
-  }
-  
-  selectCv(newCv: Cv): void {
-    this.logger.log(newCv);
-    this.selectedCv = newCv;
+    this.cvService.selectCvSubject.subscribe(
+      (cv: Cv) => {this.selectedCv = cv; }
+    );
   }
 }

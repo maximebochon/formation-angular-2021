@@ -1,13 +1,10 @@
 <div class="container">
     <div class="row">
-        <div class="col"><cv-list (forwardSelectedCv)="selectCv($event)"></cv-list></div>
+        <div class="col"><cv-list></cv-list></div>
         <div class="col">
             <div class="row">
-                <cv-card-detail [cv]="selectedCv"></cv-card-detail>
+                <cv-card-detail></cv-card-detail>
             </div>
-            <!--<div class="row">
-                <cv-hire></cv-hire>
-            </div>-->
         </div>
     </div>
     <div class="row">

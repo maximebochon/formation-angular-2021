@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Logger } from 'src/app/services/logger.service';
 import { Cv } from '../model/cv.model';
 
@@ -8,6 +9,8 @@ import { Cv } from '../model/cv.model';
 export class CvService {
 
   private cvList: Cv[] = [];
+
+  selectCvSubject = new Subject<Cv>();
 
   constructor(
     private logger: Logger
@@ -46,5 +49,9 @@ export class CvService {
 
   log(): void {
     this.logger.log(this.cvList);
+  }
+
+  selectCv(cv: Cv): void {
+    this.selectCvSubject.next(cv);
   }
 }

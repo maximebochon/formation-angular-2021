@@ -1,5 +1,5 @@
 <ol class="list-group">
     <li *ngFor="let cv of cvList; let isOdd = odd;" class="list-group-item" [ngClass]="{oddColor: isOdd}">
-        <cv-item (sendSelectedCv)="forwardCv($event)" [cv]="cv"></cv-item>
+        <cv-item [cv]="cv"></cv-item>
     </li>
 </ol>
