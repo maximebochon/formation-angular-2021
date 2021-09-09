@@ -1,6 +1,6 @@
 <div class="container">
     <img
-        [src]="imageSource | defaultImage"
+        src="{{imageCycler | async}}"
         [ngClass]="{ 'rounded-circle': isRounded }" 
-    alt="image-cycler">
+        alt="image-cycler">
 </div>

@@ -6,7 +6,7 @@ import { Observable, Subscription } from 'rxjs';
   templateUrl: './cycle-image.component.html',
   styleUrls: ['./cycle-image.component.css']
 })
-export class CycleImageComponent implements OnInit, OnDestroy {
+export class CycleImageComponent implements OnInit {
 
   @Input() isRounded = true;
 
@@ -22,30 +22,20 @@ export class CycleImageComponent implements OnInit, OnDestroy {
 
   imageSource: string = '';
 
-  subscription: Subscription|null = null;
+  imageCycler: Observable<string>|null = null;
 
   constructor() { }
 
   ngOnInit(): void {
 
-    const imageCycler = new Observable<number>((observer) => {
+    this.imageCycler = new Observable<string>((observer) => {
       let index = 0;
-      observer.next(index);
+      observer.next(this.imageSourceList[index]);
       setInterval(() => {
         ++index;
         index %= this.imageSourceList.length;
-        observer.next(index);
+        observer.next(this.imageSourceList[index]);
       }, this.intervalInMs);
     });
-
-    this.subscription = imageCycler.subscribe((index: number) => {
-      console.log(`Show image ${index + 1}/${this.imageSourceList.length}`);
-      this.imageSource = this.imageSourceList[index];
-    });
   }
-
-  ngOnDestroy(): void {
-    if (this.subscription !== null) this.subscription.unsubscribe();
-  }
-
 }
